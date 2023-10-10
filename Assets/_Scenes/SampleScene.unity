@@ -990,15 +990,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: BOMBITAS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 819b83d6955afde4995c4f49dc8bc142, type: 2}
+  m_sharedMaterial: {fileID: -7972283934499275699, guid: 819b83d6955afde4995c4f49dc8bc142, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293197998
-  m_fontColor: {r: 0.68254215, g: 0, b: 0.8980392, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2502,7 +2502,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1183.5756, y: -637.4921}
+  m_SizeDelta: {x: -1303.8694, y: -562.3609}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1979510084
 MonoBehaviour:
