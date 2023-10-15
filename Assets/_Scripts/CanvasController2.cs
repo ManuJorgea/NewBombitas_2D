@@ -14,4 +14,14 @@ public class CanvasController2 : MonoBehaviour
     {
         SceneManager.LoadScene("Level2");
     }
+
+    public void PlayGame03()
+    {
+        SceneManager.LoadScene("Level3");
+    }
+
+    public void PlayGame04()
+    {
+        SceneManager.LoadScene("Level4");
+    }
 }
