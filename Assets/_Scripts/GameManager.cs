@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] players;
+    public GameObject finishLevel;
 
     public void CheckWinState()
     {
@@ -11,19 +12,20 @@ public class GameManager : MonoBehaviour
 
         foreach (GameObject player in players)
         {
-            if (player.activeSelf) {
+            if (player.activeSelf)
+            {
                 aliveCount++;
             }
         }
 
-        if (aliveCount <= 1) {
-            Invoke(nameof(NewRound), 3f);
+        if (aliveCount <= 1)
+        {
+            Invoke(nameof(ReturnMenu), 1.5f);
         }
     }
 
-    private void NewRound()
+    private void ReturnMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
+        finishLevel.SetActive(true);
+    }  
 }
