@@ -8,6 +8,11 @@ public class MovementController : MonoBehaviour
     public float speed = 5f;
     private int vidas = 3;
 
+    //public bool player01;
+    //public bool player02;
+    //public bool player03;
+    //public bool player04;
+
     [Header("Input")]
     public KeyCode inputUp = KeyCode.W;
     public KeyCode inputDown = KeyCode.S;
@@ -22,10 +27,18 @@ public class MovementController : MonoBehaviour
     public AnimatedSpriteRenderer spriteRendererDeath;
     private AnimatedSpriteRenderer activeSpriteRenderer;
 
+    public AnimatedSpriteRenderer spriteRendererLife3;
+    public AnimatedSpriteRenderer spriteRendererLife2;
+    public AnimatedSpriteRenderer spriteRendererLife1;
+    public AnimatedSpriteRenderer spriteRendererLife0;
+    private AnimatedSpriteRenderer activeSpriteRendererLifeCounter;
+
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         activeSpriteRenderer = spriteRendererDown;
+        activeSpriteRendererLifeCounter = spriteRendererLife3;
     }
 
     private void Update()
@@ -72,7 +85,7 @@ public class MovementController : MonoBehaviour
         activeSpriteRenderer = spriteRenderer;
         activeSpriteRenderer.idle = direction == Vector2.zero;
     }
-
+        
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
@@ -81,14 +94,46 @@ public class MovementController : MonoBehaviour
 
             if (vidas>=1)
             {
+                enabled = false;
                 DeathSequenceStill();
+                if (vidas == 3)
+                {
+                    spriteRendererLife3.enabled = true;
+                    spriteRendererLife2.enabled = false;
+                    spriteRendererLife1.enabled = false;
+                    spriteRendererLife0.enabled = false;
+
+                }
+                else if (vidas == 2)
+                {
+                    spriteRendererLife3.enabled = false;
+                    spriteRendererLife2.enabled = true;
+                    spriteRendererLife1.enabled = false;
+                    spriteRendererLife0.enabled = false;
+                    Debug.Log("El personaje ha muerto 1 vez");
+                }
+                else if (vidas == 1)
+                {
+                    spriteRendererLife3.enabled = false;
+                    spriteRendererLife2.enabled = false;
+                    spriteRendererLife1.enabled = true;
+                    spriteRendererLife0.enabled = false;
+                    Debug.Log("El personaje ha muerto 2 veces");
+                }
             }
-            else if(vidas == 0)
+            else if (vidas==0)
             {
                 DeathSequence();
+                spriteRendererLife3.enabled = false;
+                spriteRendererLife2.enabled = false;
+                spriteRendererLife1.enabled = false;
+                spriteRendererLife0.enabled = true;
+                Debug.Log("El personaje ha muerto 3 veces");
             }
+
         }
     }
+
 
     private void DeathSequenceStill()
     {
