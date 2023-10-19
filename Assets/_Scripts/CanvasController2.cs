@@ -24,4 +24,8 @@ public class CanvasController2 : MonoBehaviour
     {
         SceneManager.LoadScene("Level4");
     }
+    public void SalirdelJuego()
+    {
+        Application.Quit(); //Salir del juego (Solamente en compilaciones)
+    }
 }
