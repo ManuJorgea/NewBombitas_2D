@@ -10,11 +10,32 @@ public class CanvasControllerMenu : MonoBehaviour
         SceneManager.LoadScene("Interfaces_Menus");
     }
 
-   /*
-    public void SelectLevel()
+    /*
+     public void SelectLevel()
+     {
+         SceneManager.LoadScene("Interfaces_Menus");
+         gameObject.SetActive(false);
+     }
+    */
+
+    public void Level01()
     {
-        SceneManager.LoadScene("Interfaces_Menus");
-        gameObject.SetActive(false);
+        SceneManager.LoadScene("Level1");
     }
-   */
+
+    public void Level02()
+    {
+        SceneManager.LoadScene("Level2");
+    }
+
+    public void Level03()
+    {
+        SceneManager.LoadScene("Level3");
+    }
+
+    public void Level04()
+    {
+        SceneManager.LoadScene("Level4");
+    }
+
 }
